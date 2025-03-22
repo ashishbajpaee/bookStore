@@ -9,7 +9,7 @@ const Search = () => {
     console.log("Searching for book:", searchTerm);  // Log search term to verify it's correct
     try {
       const response = await axios.get(
-        `http://localhost:4001/book/search?name=${searchTerm}`
+        `https://bookstore-backend-1-chms.onrender.com/book/search?name=${searchTerm}`
       );
       console.log("Response from API:", response.data); // Log the API response
   
