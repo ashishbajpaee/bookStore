@@ -43,7 +43,7 @@ const Search = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search ...."
-            className="w-[180px] md:w-[660px] p-2 sm:p-3 border rounded-lg sm:rounded-l-lg border-gray-500 bg-gray-700  mx-auto"
+            className="w-[180px] md:w-[660px] p-2 sm:p-3 rounded-lg sm:rounded-l-lg border-gray-500 bg-gray-700  mx-auto"
           />
         </label>
         <button
