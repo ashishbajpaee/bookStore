@@ -19,7 +19,9 @@ function Banner() {
 
       if (!isDeleting) {
         setDisplayedText((prev) =>
-          prev.length < currentWord.length ? "i" + dynamicPart.slice(0, prev.length) : prev
+          prev.length < currentWord.length
+            ? "i" + dynamicPart.slice(0, prev.length)
+            : prev
         );
 
         if (displayedText === currentWord) {
@@ -45,40 +47,41 @@ function Banner() {
   }, [displayedText, isDeleting, currentWordIndex]);
 
   // Cursor-based Banner Animation
-// Cursor-based Banner Animation
-useEffect(() => {
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
+  // Cursor-based Banner Animation
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
 
-    const xOffset = ((clientX - innerWidth / 2) / innerWidth) * 50; // Scale offset for x-axis
-    const yOffset = ((clientY - innerHeight / 2) / innerHeight) * 50; // Scale offset for y-axis
+      const xOffset = ((clientX - innerWidth / 2) / innerWidth) * 50; // Scale offset for x-axis
+      const yOffset = ((clientY - innerHeight / 2) / innerHeight) * 50; // Scale offset for y-axis
 
-    gsap.to(bannerRef.current, {
-      x: xOffset,
-      y: yOffset, // Apply y-offset as well
-      duration: 0.3,
-      ease: "power3.out",
-    });
-  };
+      gsap.to(bannerRef.current, {
+        x: xOffset,
+        y: yOffset, // Apply y-offset as well
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    };
 
-  window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
-  return () => {
-    window.removeEventListener("mousemove", handleMouseMove);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <div className="w-screen container mx-auto flex flex-col md:flex-row md:mt-40 my-10">
-      {/* Text and Input Section */}
-      <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-36 flex flex-col items-center md:items-start">
+      {/* Text and Input Sectio:n */}
+      <div className="w-full md:p-0 sm:p-12 order-2 md:order-1 md:w-1/2 mt-12 md:mt-36 flex flex-col items-center md:items-start">
         <h1 className="text-2xl lg:text-5xl text-white font-bold text-center md:text-left">
           Let's start to learn something <br />
           <span className="text-pink-500">{displayedText}</span>
         </h1>
         <p className="text-sm md:text-2xl text-center md:text-left md:mt-10 mt-4">
-          "You can never get a cup of tea large enough or a book long enough to suit me"
+          "You can never get a cup of tea large enough or a book long enough to
+          suit me"
         </p>
         <Search />
         <p className="text-sm md:text-4xl text-center md:text-left md:mt-20 text-pink-500 mt-4">

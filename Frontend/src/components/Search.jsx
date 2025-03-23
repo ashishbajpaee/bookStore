@@ -6,13 +6,13 @@ const Search = () => {
   const [book, setBook] = useState(null);
   const [message, setMessage] = useState("");
   const handleSearch = async () => {
-    console.log("Searching for book:", searchTerm);  // Log search term to verify it's correct
+    console.log("Searching for book:", searchTerm); // Log search term to verify it's correct
     try {
       const response = await axios.get(
         `https://bookstore-backend-1-chms.onrender.com/book/search?name=${searchTerm}`
       );
       console.log("Response from API:", response.data); // Log the API response
-  
+
       if (response.data.available) {
         setBook(response.data.book);
         setMessage("Book is Available");
@@ -29,18 +29,17 @@ const Search = () => {
 
   return (
     <div className="mt-12">
-        <div className="flex flex-row gap-2" >
-      <label className="input input-bordered bg-gray-700 flex items-center gap-2 md:w-[450px]">
-        <input
-          type="text"
-          className="grow"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-       
-      </label>
-      <button
+      <div className="flex flex-row gap-2 ">
+        <label className="input input-bordered bg-gray-700 flex items-center gap-2 sm:w-[350px]">
+          <input
+            type="text"
+            className="grow"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </label>
+        <button
           onClick={handleSearch}
           className="bg-pink-500 hover:bg-pink-700 text-white px-4 py-2 rounded-lg cursor-pointer"
         >
