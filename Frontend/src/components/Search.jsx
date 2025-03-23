@@ -31,12 +31,19 @@ const Search = () => {
     <div className="mt-12">
       <div className="flex flex-row gap-2 ">
         <label className="input input-bordered bg-gray-700 flex items-center gap-2 sm:w-[350px]">
-          <input
+          {/* <input
             type="text"
             className="grow"
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+          /> */}
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Search ...."
+            className="w-[180px] md:w-[660px] p-2 sm:p-3 border rounded-lg sm:rounded-l-lg border-gray-500 bg-gray-700  mx-auto"
           />
         </label>
         <button
