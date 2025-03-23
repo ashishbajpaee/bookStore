@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import banner from "../assets/Banner.png";
+import banner from "/assets/Banner.png";
 import Search from "./Search";
 import { gsap } from "gsap";
 

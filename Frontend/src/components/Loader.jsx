@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import ICON from "../assets/ICON.png"; // Replace with the path to your image
+import ICON from "/assets/ICON.png"; // Replace with the path to your image
 
 const Loader = ({ setLoadingComplete }) => {
   const imageRef = useRef(null);
