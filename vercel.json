@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/(.*)", 
-      "destination": "https://bookstore-backend-1-chms.onrender.com/api/$1"
-    }
-  ]
-}

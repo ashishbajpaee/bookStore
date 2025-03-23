@@ -6,13 +6,13 @@ import Signup from './components/Signup';
 import Courses from './courses/Courses';
 import Contact from './components/Contact';
 import { userAuth } from './context/AuthProvider';
-import Loader from './components/Loader'; // Assuming Loader.jsx exists in components/
+import Loader from './components/Loader';
 
 function App() {
   const [authUser, setAuthUser] = userAuth();
   const [loadingComplete, setLoadingComplete] = useState(false);
 
-  // Use sessionStorage to check if loader has already been shown
+
   useEffect(() => {
     if (!sessionStorage.getItem('loaderShown')) {
       sessionStorage.setItem('loaderShown', 'true');
@@ -22,7 +22,6 @@ function App() {
     }
   }, []);
 
-  // If loader is not shown, display it
   if (!loadingComplete) {
     return <Loader setLoadingComplete={setLoadingComplete} />;
   }
